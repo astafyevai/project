@@ -1,0 +1,47 @@
+<html>
+<head>
+<title> Статистика </title> 
+</head> 
+<body>
+<tr>
+<td align = 'center'>
+<a href = '/'>Стартовая страница</a>
+</td>
+<td align = 'center'>
+<a href = '/search'>Поиск</a>
+</td>
+<td align = 'center'>
+<a href = '/json'>json</a>
+</td>
+<td align = 'center'>
+<a href = '/stats'>Статистика</a>
+</td>
+</tr> 
+<style>
+  body { background: url(pattern.jpg); }
+</style>
+<table border="1">
+<h1>Благодарим Вас за участие!</h1>
+<tr>
+
+<th>Родной язык:</th>
+<th>Место рождения:</th>
+<th>Место проживания:</th>
+
+</tr>
+
+<ul>
+	{% for item in answer %}
+	<tr>
+	<td>{{item[3]}}</td>
+	<td>{{item[4]}}</td>
+	<td>{{item[5]}}</td>
+	</tr>
+
+	{% endfor %}
+</table>
+</ul>
+<p><input type = "submit" value = "Стартовая страница"></p>
+</form>
+</body>
+</html>

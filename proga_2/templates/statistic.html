@@ -1,0 +1,59 @@
+<html>
+<head>
+<title> Статистика </title> 
+</head> 
+<body>
+<tr>
+<td align = 'center'>
+<a href = '/'>Стартовая страница</a>
+</td>
+<td align = 'center'>
+<a href = '/search'>Поиск</a>
+</td>
+<td align = 'center'>
+<a href = '/json'>json</a>
+</td>
+<td align = 'center'>
+<a href = '/stats'>Статистика</a>
+</td>
+</tr> 
+<form action "http://127.0.0.1:5000/"> 
+<table border="1">
+<h1>Благодарим Вас за участие!</h1>
+<tr>
+<th>Имена:</th>
+<th>Пол:</th>
+<th>Возраст:</th>
+<th>Родной язык:</th>
+<th>Место рождения:</th>
+<th>Место проживания:</th>
+<th>Названия картинки а):</th>
+<th>Названия картинки b):</th>
+<th>Названия картинки c):</th>
+<th>Названия картинки d):</th>
+<th>Названия картинки e):</th>
+<th>Названия картинки f):</th>
+<th>Названия картинки g):</th>
+</tr>
+
+<ul>
+	{% for item in answer %}
+	<tr><td>{{item[0]}}</td>
+	<td>{{item[1]}}</td>
+	<td>{{item[2]}}</td>
+	<td>{{item[3]}}</td>
+	<td>{{item[4]}}</td>
+	<td>{{item[5]}}</td>
+	<td>{{item[6]}}</td>
+	<td>{{item[7]}}</td>
+	<td>{{item[8]}}</td>
+	<td>{{item[9]}}</td>
+	<td>{{item[10]}}</td>
+	<td>{{item[11]}}</td>
+	<td>{{item[12]}}</td></tr> 
+	{% endfor %}
+</table>
+</ul>
+</form>
+</body>
+</html>
