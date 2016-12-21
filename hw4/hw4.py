@@ -28,7 +28,6 @@ def table_1 (file):
                 i += 1
     return dicti
 
-    file_txt.close ()
     file_sql.close ()
 
 
