@@ -11,7 +11,7 @@ bot.set_webhook (url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
 app = flask.Flask (__name__)
 
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands=['text'])
 def send_welcome(message):
 	bot.send_message(message.chat.id, 'Привет! Я посчитаю, сколько слов в твоём сообщении.')
 
@@ -33,3 +33,6 @@ def webhook():
         return ''
     else:
         flask.abort(403)
+        
+if __name__ == '__main__':
+    bot.polling(none_stop=True)
