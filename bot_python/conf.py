@@ -1,0 +1,3 @@
+TOKEN = "307232809:AAHlFMO7BKSXfTMshM4fGRQ2iWxaFI3jXuk"
+WEBHOOK_HOST = 'asti.pythonanywhere.com'
+WEBHOOK_PORT = '443'  
