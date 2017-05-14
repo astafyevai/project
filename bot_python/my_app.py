@@ -1,4 +1,4 @@
-import telebot  
+import telebot
 import conf
 import flask
 
@@ -11,23 +11,18 @@ bot.remove_webhook()
 bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
 app = flask.Flask(__name__)
-  
+
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-	bot.send_message(message.chat.id, "Привет! Я посчитаю, сколько слов в твоём сообщении.")
+	bot.send_message(message.chat.id, "Привет! Я посчитаю, сколько слов в твоём сообщении. Пожалуйста, следи за тем, чтобы твои знаки препинания не были отделены пробелами :)")
 
 @bot.message_handler(func=lambda m: True)
 def send_len(message):
-        bot.send_message(message.chat.id, 'В твоём сообщении {} слов(о|а).'.format(len(message.text.split())))
-	
-@bot.message_handler(...)
-def my_function(message):
-        reply = ''
-        bot.send_message(message.chat.id, reply)
+        bot.send_message(message.chat.id, 'В твоём сообщении {} слов(a|o). (Если вдруг ты случайно не ввёл знак препинаний через пробел.)'.format(len(message.text.split())))
 
 #if __name__ == '__main__':
 #    bot.polling(none_stop=True)
-        
+
 
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
