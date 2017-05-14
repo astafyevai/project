@@ -33,6 +33,3 @@ def webhook():
         return ''
     else:
         flask.abort(403)
-        
-if __name__ == '__main__':
-    main()
